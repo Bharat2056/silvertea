@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Silver6 Gastric Tea - Premium herbal support for digestion and stomach comfort.">
+    <title>Silver6 Gastric Tea | Premium Herbal Digestion Support</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cream: '#FDFBF7', // Warm premium background
+                            dark: '#064E3B', // Deep Emerald
+                            green: '#10B981', // Vivid Green for accents
+                            gold: '#B45309', // Subtle Gold/Amber
+                            gray: '#4B5563', // Soft text gray
+                            navy: '#111827', // Dark Navy for Order Card
+                            stone: '#FAFAF9', // Stone 50
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'scale-in': 'scaleIn 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.95)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FDFBF7; color: #1F2937; overflow-x: hidden; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FDFBF7; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+        /* Animation Utility Classes */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        
+        /* Hide scrollbar for review carousel */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Modal Transitions */
+        .modal { transition: opacity 0.3s ease; }
+        .modal:not(.hidden) { display: flex; }
+    </style>
+</head>
+<body class="antialiased pb-20 md:pb-0">
+
+    <nav class="fixed w-full z-40 transition-all duration-300 bg-brand-cream/90 backdrop-blur-md border-b border-gray-100" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-leaf text-brand-dark text-xl group-hover:rotate-12 transition-transform"></i>
+                <span class="font-serif font-bold text-2xl text-brand-dark tracking-tight">Silver6</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#product" class="text-sm font-medium text-gray-600 hover:text-brand-dark transition">Product</a>
+                <a href="#benefits" class="text-sm font-medium text-gray-600 hover:text-brand-dark transition">Benefits</a>
+                <a href="#reviews" class="text-sm font-medium text-gray-600 hover:text-brand-dark transition">Reviews</a>
+                <a href="#order" class="bg-brand-dark text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-emerald-900 transition shadow-lg hover:shadow-emerald-900/20 transform hover:-translate-y-0.5">
+                    Order Now
+                </a>
+            </div>
+
+            <button class="md:hidden text-brand-dark text-xl p-2" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-4 shadow-lg absolute w-full left-0 top-full">
+            <a href="#product" class="block text-gray-600 py-2 border-b border-gray-50" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Product</a>
+            <a href="#benefits" class="block text-gray-600 py-2 border-b border-gray-50" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Benefits</a>
+            <a href="#reviews" class="block text-gray-600 py-2 border-b border-gray-50" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Reviews</a>
+            <a href="#order" class="block text-brand-dark font-bold py-2" onclick="document.getElementById('mobileMenu').classList.add('hidden')">Order Now</a>
+        </div>
+    </nav>
+
+    <section class="relative pt-28 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal active relative z-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-6">
+                    <i class="fa-solid fa-star text-yellow-500"></i> Premium Herbal Blend
+                </div>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-brand-dark leading-[1.1] mb-6">
+                    Feel lighter <br> <span class="italic text-brand-green font-normal">after meals.</span>
+                </h1>
+                <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed max-w-md mx-auto md:mx-0">
+                    Silver6 Gastric Tea supports healthy digestion and everyday stomach comfort with a sophisticated blend of natural herbs.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#order" class="bg-brand-dark text-white px-8 py-4 rounded-full font-medium shadow-xl hover:shadow-2xl hover:bg-emerald-900 transition flex items-center gap-2">
+                        Start Your Relief <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="mt-12 flex flex-wrap justify-center md:justify-start gap-4 md:gap-8 border-t border-gray-200 pt-8">
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-500">
+                        <i class="fa-solid fa-seedling text-brand-dark"></i> Herbal Blend
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-500">
+                        <i class="fa-solid fa-clock text-brand-dark"></i> Easy to Prepare
+                    </div>
+                    <div class="flex items-center gap-2 text-sm font-medium text-gray-500">
+                        <i class="fa-solid fa-truck-fast text-brand-dark"></i> Fast Delivery
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal relative flex justify-center md:justify-end mt-8 md:mt-0">
+                <div class="relative w-full max-w-xs md:max-w-md aspect-[4/5] bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-2xl overflow-hidden border-8 border-white">
+                    <img 
+                        src="https://scontent.fktm17-1.fna.fbcdn.net/v/t39.30808-6/399368344_122122629470040753_2230427210158417432_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHTMXcb6W52euQ0CMWj9-Z0MrskS6B-m6EyuyRLoH6boR5B-jIwN8TLqAKcu3NdGDX8lxMoYgsbyyT0x5ZpEt0r&_nc_ohc=hWmOjB0kN68Q7kNvwGBOHNl&_nc_oc=AdktwhEX6-H66wAkBF3p8lB-vEBj2g43HfSIhBmULp7j2CIsZioeT1nUmi-pJZMZZMM5vGsCdmMHFfpssLvdI01D&_nc_zt=23&_nc_ht=scontent.fktm17-1.fna&_nc_gid=eP9hSbmVY0bSRZc7Y0lOAw&oh=00_AfrLt9L9tY2bqFP_OCPHzukAuL3OA0Wn6ebafKDDW8p1zQ&oe=697F9B9D" 
+                        alt="Silver6 Gastric Tea - Premium herbal tea for digestion"
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                    >
+                    <div class="absolute -bottom-20 -right-20 w-40 h-40 md:w-64 md:h-64 bg-emerald-100/50 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="py-12 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Why People Choose It</h2>
+                <p class="text-gray-500 text-sm md:text-base">Experience the difference of a premium digestive formula.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="reveal relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg group hover:-translate-y-2 transition duration-300">
+                    <div class="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full text-white">
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-wind text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Reduces Bloating</h3>
+                        <p class="text-xs md:text-sm text-gray-200">Helps ease that heavy, full feeling.</p>
+                    </div>
+                </div>
+                <div class="reveal relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg group hover:-translate-y-2 transition duration-300 transition-delay-100">
+                    <div class="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110" style="background-image: url('./images/supports.jpeg');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full text-white">
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-heart-pulse text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Supports Digestion</h3>
+                        <p class="text-xs md:text-sm text-gray-200">Promotes smoother digestive flow.</p>
+                    </div>
+                </div>
+                <div class="reveal relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg group hover:-translate-y-2 transition duration-300 transition-delay-200">
+                      <div class="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full text-white">
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-couch text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold mb-2">Daily Comfort</h3>
+                        <p class="text-xs md:text-sm text-gray-200">Perfect after heavy meals.</p>
+                    </div>
+                </div>
+                <div class="reveal relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-lg group hover:-translate-y-2 transition duration-300 transition-delay-300">
+                    <div class="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full text-white">
+                        <div class="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-leaf text-white"></i>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold mb-2">100% Natural</h3>
+                        <p class="text-xs md:text-sm text-gray-200">Pure herbs, no additives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product" class="py-16 md:py-24 bg-brand-dark text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leaves.png')]"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10 reveal">
+            <span class="text-emerald-300 text-sm font-bold uppercase tracking-widest mb-4 block">The Origin</span>
+            <h2 class="font-serif text-3xl md:text-5xl mb-6 md:mb-8 leading-tight">Rooted in Tradition,<br>Brewed for Today.</h2>
+            <p class="text-emerald-100 text-base md:text-xl leading-relaxed font-light mb-8 md:mb-10">
+                Inspired by centuries of herbal wisdom, Silver6 was created to bridge the gap between traditional remedies and modern lifestyles. We believe that digestive wellness shouldn't be complicated. It should be a simple, soothing ritual that brings you back to balance, one cup at a time.
+            </p>
+            <div class="w-24 h-1 bg-emerald-500 mx-auto rounded-full"></div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-cream">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16 reveal">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-dark">Your Daily Ritual</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12 relative">
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-0"></div>
+
+                <div class="reveal relative z-10 text-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white mb-6">
+                         <img src="./images/sip.png" alt="Add hot water" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Prepare</h4>
+                    <p class="text-gray-500 text-sm">Add one bag to hot water.</p>
+                </div>
+                <div class="reveal relative z-10 text-center transition-delay-200">
+                    <div class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white mb-6">
+                        <img src="./images/stip.jpeg" alt="Steep tea" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Steep</h4>
+                    <p class="text-gray-500 text-sm">Wait 5–10 mins for infusion.</p>
+                </div>
+                <div class="reveal relative z-10 text-center transition-delay-400">
+                    <div class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-white mb-6">
+                        <img src="./images/enjoy.jpeg" alt="Drink warm" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="font-bold text-lg mb-2">Enjoy</h4>
+                    <p class="text-gray-500 text-sm">Drink warm after meals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-brand-dark text-white rounded-3xl md:rounded-[2.5rem] p-6 md:p-16 relative overflow-hidden shadow-2xl reveal">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-yellow-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+
+                <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+                    <div>
+                        <div class="inline-block bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full mb-4">BEST SELLER</div>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">Wellness Bundle</h2>
+                        <p class="text-emerald-100 mb-6 md:mb-8 text-sm md:text-base">The complete 3-month course for lasting digestive harmony.</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-emerald-500/30 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-sm">3 Month Supply</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-6 h-6 rounded-full bg-emerald-500/30 flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></div>
+                                <span class="text-sm">Free Priority Shipping</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 border border-white/10 text-center">
+                        <p class="text-sm text-emerald-200 mb-2">Limited Time Offer</p>
+                        <div class="text-4xl md:text-5xl font-serif font-bold mb-2">$65</div>
+                        <p class="text-emerald-200 line-through mb-6 md:mb-8">$75</p>
+                        <a href="#order" class="block w-full bg-white text-brand-dark font-bold py-3 md:py-4 rounded-xl hover:bg-gray-100 transition">Select This Pack</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="py-16 md:py-24 bg-brand-cream relative">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center mb-8 md:mb-12">
+            <h2 class="font-serif text-2xl md:text-3xl text-brand-dark">Client Stories</h2>
+            <div class="flex gap-2">
+                <button onclick="document.getElementById('reviews-container').scrollBy({left: -300, behavior: 'smooth'})" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-brand-dark hover:text-white transition">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button onclick="document.getElementById('reviews-container').scrollBy({left: 300, behavior: 'smooth'})" class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-brand-dark hover:text-white transition">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="reviews-container" class="flex overflow-x-auto gap-4 md:gap-6 pb-8 no-scrollbar snap-x px-1">
+            <div class="min-w-[280px] md:min-w-[320px] h-[220px] bg-brand-stone p-6 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition duration-300 snap-center flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-brand-gold mb-3 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic text-sm mb-4 leading-relaxed">
+                        "Finally found something natural<br>that actually works. I feel so much lighter in the<br>evenings now."
+                    </p>
+                </div>
+                <div>
+                    <p class="font-bold text-brand-dark text-sm">Sarah Jenkins</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wide">Verified Buyer</p>
+                </div>
+            </div>
+            <div class="min-w-[280px] md:min-w-[320px] h-[220px] bg-brand-stone p-6 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition duration-300 snap-center flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-brand-gold mb-3 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic text-sm mb-4 leading-relaxed">
+                        "Simple routine, great results. The taste is very earthy<br>and pleasant. Best purchase<br>I've made this year."
+                    </p>
+                </div>
+                <div>
+                    <p class="font-bold text-brand-dark text-sm">Michael Tan</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wide">Verified Buyer</p>
+                </div>
+            </div>
+            <div class="min-w-[280px] md:min-w-[320px] h-[220px] bg-brand-stone p-6 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition duration-300 snap-center flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-brand-gold mb-3 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic text-sm mb-4 leading-relaxed">
+                        "Fast delivery and premium packaging. Highly <br> recommended for digestion issues."
+                    </p>
+                </div>
+                <div>
+                    <p class="font-bold text-brand-dark text-sm">Emily Rose</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wide">Verified Buyer</p>
+                </div>
+            </div>
+            <div class="min-w-[280px] md:min-w-[320px] h-[220px] bg-brand-stone p-6 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition duration-300 snap-center flex-shrink-0 flex flex-col justify-between">
+                <div>
+                    <div class="flex text-brand-gold mb-3 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 italic text-sm mb-4 leading-relaxed">
+                        "I take this with me when I travel. It's  <br> a lifesaver for holiday meals.<br>Gentle and effective."
+                    </p>
+                </div>
+                <div>
+                    <p class="font-bold text-brand-dark text-sm">David K.</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wide">Verified Buyer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="py-16 md:py-20 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="font-serif text-2xl md:text-3xl text-center mb-8 md:mb-12 text-brand-dark">Common Questions</h2>
+            <div class="space-y-4">
+                <details class="group bg-brand-cream rounded-xl">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-brand-dark">
+                        How long does delivery take?
+                        <span class="transition group-open:rotate-180 text-brand-green"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-5 md:px-6 pb-5 md:pb-6 text-sm leading-relaxed">
+                        We process orders within 24 hours. Standard delivery typically takes 2-4 business days depending on your location.
+                    </div>
+                </details>
+                <details class="group bg-brand-cream rounded-xl">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-brand-dark">
+                        How do I drink it?
+                        <span class="transition group-open:rotate-180 text-brand-green"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-5 md:px-6 pb-5 md:pb-6 text-sm leading-relaxed">
+                        Steep one tea bag in hot water for 5-10 minutes. For best results, drink it warm about 30 minutes after your main meals.
+                    </div>
+                </details>
+                <details class="group bg-brand-cream rounded-xl">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-brand-dark">
+                        Can I drink it daily?
+                        <span class="transition group-open:rotate-180 text-brand-green"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-5 md:px-6 pb-5 md:pb-6 text-sm leading-relaxed">
+                        Yes! Silver6 is a 100% natural herbal blend designed for daily support. It contains no harsh laxatives.
+                    </div>
+                </details>
+                <details class="group bg-brand-cream rounded-xl">
+                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-5 md:p-6 text-brand-dark">
+                        Storage instructions?
+                        <span class="transition group-open:rotate-180 text-brand-green"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 px-5 md:px-6 pb-5 md:pb-6 text-sm leading-relaxed">
+                        Keep the tea in a cool, dry place away from direct sunlight to maintain its freshness and potency.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="py-16 md:py-24 bg-brand-cream relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100 reveal">
+                
+                <div class="w-full md:w-5/12 bg-brand-navy p-8 md:p-12 text-white relative flex flex-col justify-between">
+                    <div>
+                        <div class="inline-block bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-full mb-6">BEST SELLER</div>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-2">Special Offer</h2>
+                        <p class="text-gray-400 text-sm mb-8">Valid while stock lasts</p>
+
+                        <div class="space-y-4 border-t border-gray-700 pt-6">
+                            <div class="flex justify-between items-center text-gray-400">
+                                <span>Regular Price</span>
+                                <span class="line-through decoration-red-500">$75.00</span>
+                            </div>
+                            <div class="flex justify-between items-center text-emerald-400 text-xl font-bold">
+                                <span>Offer Price</span>
+                                <span>$65.00</span>
+                            </div>
+                             <div class="flex justify-between items-center text-white text-sm font-medium border-t border-gray-700 pt-4">
+                                <span>You Save</span>
+                                <span>$10.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 bg-gray-800/50 rounded-xl p-4 border border-gray-700 flex items-start gap-3">
+                         <div class="w-8 h-8 rounded-full bg-brand-gold/20 flex items-center justify-center flex-shrink-0 text-brand-gold">
+                             <i class="fa-solid fa-shield-halved"></i>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-sm text-white">100% Guarantee</h4>
+                             <p class="text-xs text-gray-400">Genuine herbal blend. Buy with confidence.</p>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-7/12 p-6 md:p-12">
+                    <div class="flex items-center gap-3 mb-6 border-l-4 border-brand-green pl-4">
+                        <h3 class="font-serif text-2xl font-bold text-brand-dark">Fill Order Form</h3>
+                    </div>
+
+                    <form id="orderForm" class="space-y-5">
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-500 uppercase">Full Name</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3.5 text-gray-400"><i class="fa-regular fa-user"></i></span>
+                                <input type="text" id="inputName" name="name" required class="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="Your Name">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-500 uppercase">Mobile Number</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3.5 text-gray-400"><i class="fa-solid fa-phone"></i></span>
+                                <input type="tel" id="inputPhone" name="phone" required class="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="Your Phone Number">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold text-gray-500 uppercase">Delivery Address</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-3.5 text-gray-400"><i class="fa-solid fa-location-dot"></i></span>
+                                <input type="text" id="inputAddress" name="address" required class="w-full bg-white border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:border-brand-dark focus:ring-1 focus:ring-brand-dark outline-none transition" placeholder="City, Address">
+                            </div>
+                        </div>
+                        
+                         <input type="hidden" name="quantity" value="1 Pack">
+                         <input type="hidden" name="payment" value="COD">
+
+                        <button type="submit" id="submitBtn" class="w-full bg-brand-dark hover:bg-emerald-900 text-white font-bold py-4 rounded-lg shadow-lg transition mt-6 flex justify-center items-center gap-2 group">
+                            <span>Confirm Order</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        
+                        <p class="text-center text-xs text-gray-400 mt-4"><i class="fa-solid fa-lock mr-1"></i> Your information is safe with us.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 md:py-16 text-sm">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 md:gap-12 text-center md:text-left">
+            <div class="col-span-1 md:col-span-2">
+                 <div class="flex items-center justify-center md:justify-start gap-2 mb-6 text-white">
+                    <span class="font-serif font-bold text-2xl tracking-tight">Silver6</span>
+                </div>
+                <p class="mb-8 font-light leading-relaxed max-w-xs mx-auto md:mx-0">Premium natural solutions for digestive health. Crafted with care, purely for your comfort.</p>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-dark hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-dark hover:text-white transition"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href="tel:+1234567890" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-dark hover:text-white transition"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Company</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Legal</h4>
+                <ul class="space-y-4">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 mt-12 md:mt-16 pt-8 border-t border-gray-800 text-xs text-center text-gray-600">
+            <p>&copy; 2024 Silver6 Gastric Tea. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 p-4 z-40 flex justify-between items-center shadow-[0_-5px_10px_rgba(0,0,0,0.05)]">
+        <div>
+            <span class="block text-xs text-gray-500 uppercase">Total</span>
+            <span class="font-serif font-bold text-lg text-brand-dark">$65.00</span>
+        </div>
+        <a href="#order" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-emerald-900 transition">
+            Order Now
+        </a>
+    </div>
+
+    <div class="hidden md:flex fixed bottom-8 right-8 z-40 flex-col gap-3">
+        <button onclick="orderViaWhatsApp()" class="w-12 h-12 bg-[#25D366] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition tooltip" title="WhatsApp">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </button>
+        <a href="https://www.facebook.com/silver6gastrictea" target="_blank" class="w-12 h-12 bg-[#0084FF] text-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition tooltip" title="Messenger">
+            <i class="fa-brands fa-facebook-messenger text-2xl"></i>
+        </a>
+    </div>
+
+    <div id="confirmModal" class="fixed inset-0 z-50 flex items-center justify-center hidden modal">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="hideConfirm()"></div>
+        <div class="relative bg-white rounded-3xl p-8 max-w-sm w-full mx-4 shadow-2xl transform transition-all scale-100 animate-scale-in">
+            <h3 class="font-serif text-2xl font-bold text-brand-dark mb-4 text-center">Review Your Order</h3>
+            
+            <div class="bg-gray-50 rounded-xl p-4 mb-6 space-y-3 text-sm">
+                <div class="flex justify-between border-b border-gray-200 pb-2">
+                    <span class="text-gray-500">Name</span>
+                    <span class="font-semibold text-right" id="confName"></span>
+                </div>
+                <div class="flex justify-between border-b border-gray-200 pb-2">
+                    <span class="text-gray-500">Phone</span>
+                    <span class="font-semibold text-right" id="confPhone"></span>
+                </div>
+                <div class="flex justify-between border-b border-gray-200 pb-2">
+                    <span class="text-gray-500">Address</span>
+                    <span class="font-semibold text-right break-words max-w-[150px]" id="confAddress"></span>
+                </div>
+                <div class="flex justify-between pt-1">
+                    <span class="text-gray-500 font-bold">Total to Pay</span>
+                    <span class="font-bold text-emerald-600 text-lg">$65.00</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button onclick="submitToGoogle()" id="finalConfirmBtn" class="w-full bg-brand-dark text-white py-3.5 rounded-xl font-bold hover:bg-emerald-900 transition shadow-lg hover:shadow-emerald-900/20">
+                    Yes, Place Order
+                </button>
+                <button onclick="hideConfirm()" class="w-full bg-transparent text-gray-500 py-3 rounded-xl font-medium hover:bg-gray-100 transition">
+                    Cancel & Edit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center hidden modal">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="closeSuccess()"></div>
+        <div class="relative bg-white rounded-[2rem] p-8 max-w-sm w-full mx-4 text-center shadow-2xl transform transition-all scale-100 animate-scale-in">
+            <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fa-solid fa-check text-3xl text-emerald-600"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-brand-dark mb-2">Order Confirmed!</h3>
+            <p class="text-gray-500 mb-8 leading-relaxed text-sm">Thank you for your order. We will contact you shortly to confirm the delivery details.</p>
+            
+            <button onclick="closeSuccess()" class="w-full bg-brand-dark text-white py-3.5 rounded-xl font-bold hover:bg-emerald-900 transition shadow-lg hover:shadow-emerald-900/20">
+                Back to Home
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- CONFIGURATION ---
+        // REPLACE THIS with your deployed Google Apps Script URL
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNa5Hjp3oZMfJT7x1KtOoj-G1VVFSxZSVPBwtl9cY1Ok1bzouMRyu2tWVgRIHiSSPwwA/exec"; 
+        const WHATSAPP_NUMBER = "1234567890"; // Enter number with country code
+        
+        // --- ANIMATION OBSERVER ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
+
+        // --- WHATSAPP LOGIC ---
+        function orderViaWhatsApp() {
+            const message = 
+`Hello Silver6, I'd like to place an order.
+Name: 
+Phone: 
+Address: 
+Quantity: 
+Payment: 
+Notes: `;
+            
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // --- MODAL LOGIC & FORM HANDLING ---
+        
+        const form = document.getElementById('orderForm');
+        let formDataCache = null; // Store form data temporarily
+
+        // 1. Intercept Form Submission -> Show Confirmation Modal
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop actual submission
+
+            // Get values
+            const name = document.getElementById('inputName').value;
+            const phone = document.getElementById('inputPhone').value;
+            const address = document.getElementById('inputAddress').value;
+
+            // Populate Confirmation Modal
+            document.getElementById('confName').innerText = name;
+            document.getElementById('confPhone').innerText = phone;
+            document.getElementById('confAddress').innerText = address;
+
+            // Store data for the final step
+            formDataCache = new FormData(form);
+
+            // Show Confirmation Modal
+            document.getElementById('confirmModal').classList.remove('hidden');
+        });
+
+        // 2. Hide Confirmation Modal (Cancel/Edit)
+        function hideConfirm() {
+            document.getElementById('confirmModal').classList.add('hidden');
+        }
+
+        // 3. Submit to Google (Final Confirm Click)
+        function submitToGoogle() {
+            const finalBtn = document.getElementById('finalConfirmBtn');
+            const originalText = finalBtn.innerText;
+
+            // Loading State
+            finalBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+            finalBtn.disabled = true;
+            finalBtn.classList.add('opacity-75', 'cursor-not-allowed');
+
+            if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+                alert("Configuration Error: Please update the Google Script URL in the code.");
+                resetConfirmBtn(finalBtn, originalText);
+                return;
+            }
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                body: formDataCache
+            })
+            .then(response => {
+                // Success!
+                hideConfirm(); // Hide verify modal
+                
+                // Show Success Modal
+                document.getElementById('successModal').classList.remove('hidden');
+                
+                form.reset(); // Clear form
+                resetConfirmBtn(finalBtn, originalText);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("Connection Error. Please check your internet or try WhatsApp.");
+                resetConfirmBtn(finalBtn, originalText);
+            });
+        }
+
+        function resetConfirmBtn(btn, text) {
+            btn.innerText = text;
+            btn.disabled = false;
+            btn.classList.remove('opacity-75', 'cursor-not-allowed');
+        }
+
+        // 4. Close Success Modal
+        function closeSuccess() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
